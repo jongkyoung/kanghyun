@@ -62,15 +62,16 @@
   }
 
   /* ---------- 표지 ---------- */
-  .cover { position: relative; overflow: hidden; }
+  .cover { overflow: hidden; }
+  .cover-ph { position: relative; }
   .cover img { display: block; width: 100%; height: auto; }
-  .cover::after {
+  .cover-ph::after {
     content: ''; position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(251,247,240,.25) 0%, rgba(251,247,240,0) 22%, rgba(251,247,240,0) 55%, rgba(251,247,240,.96) 92%, #FBF7F0 100%);
+    background: linear-gradient(180deg, rgba(251,247,240,0) 82%, rgba(251,247,240,.7) 96%, #FBF7F0 100%);
+    pointer-events: none;
   }
   .cover-text {
-    position: absolute; left: 0; right: 0; bottom: 18px; z-index: 2;
-    text-align: center; padding: 0 24px;
+    text-align: center; padding: 26px 24px 0;
   }
   .cover-eyebrow {
     font-size: 12px; letter-spacing: .35em; text-indent: .35em;
@@ -300,7 +301,9 @@
 <div class="frame">
 
   <header class="cover">
+    <div class="cover-ph">
     <img src="img/cover.jpg" alt="한복을 입고 달항아리에 기대어 있는 강현이" width="1120" height="1400">
+    </div>
     <div class="cover-text">
       <p class="cover-eyebrow">First Birthday</p>
       <h1 class="cover-title">강현이의<br>첫 번째 생일</h1>

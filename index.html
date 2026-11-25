@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>강현이의 첫 번째 생일</title>
+<meta name="description" content="2026년 12월 5일 토요일 오후 5시 · 대전 벨노아">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="강현이의 첫 번째 생일">
+<meta property="og:description" content="2026년 12월 5일 토요일 오후 5시 · 대전 벨노아에서 강현이의 첫돌을 축하해 주세요.">
+<meta property="og:image" content="https://jongkyoung.github.io/kanghyun/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://jongkyoung.github.io/kanghyun/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+</head>
+<body>
+<style>
+  @font-face {
+    font-family: 'Gowun Batang';
+    src: url('fonts/gowun.woff2') format('woff2');
+    font-weight: 400; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gowun Batang';
+    src: url('fonts/gowunb.woff2') format('woff2');
+    font-weight: 700; font-display: swap;
+  }
+  :root {
+    --ground: #FBF7F0;
+    --card: #FFFDF8;
+    --ink: #4A4238;
+    --ink-soft: #7A7062;
+    --label: #A89B8A;
+    --indigo: #8A9BC4;
+    --indigo-deep: #5D6F9E;
+    --apricot: #E8B4A0;
+    --line: #E9E0D2;
+    --serif: 'Gowun Batang', 'Apple SD Gothic Neo', serif;
+    --sans: 'Apple SD Gothic Neo', 'Pretendard', 'Noto Sans KR', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.7;
+    word-break: keep-all;
+  }
+  .frame { max-width: 480px; margin: 0 auto; background: var(--ground); }
+
+  /* PC: 바탕을 살짝 가라앉히고 초대장을 카드로 띄운다 */
+  @media (min-width: 720px) {
+    body { background: #F1EADC; padding: 48px 24px 64px; }
+    .frame {
+      max-width: 640px; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 18px 50px rgba(74,66,56,.16);
+    }
+    section { padding-left: 44px; padding-right: 44px; }
+  }
+
+  /* ---------- 표지 ---------- */
+  .cover { position: relative; overflow: hidden; }
+  .cover img { display: block; width: 100%; height: auto; }
+  .cover::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(251,247,240,.25) 0%, rgba(251,247,240,0) 22%, rgba(251,247,240,0) 55%, rgba(251,247,240,.96) 92%, #FBF7F0 100%);
+  }
+  .cover-text {
+    position: absolute; left: 0; right: 0; bottom: 18px; z-index: 2;
+    text-align: center; padding: 0 24px;
+  }
+  .cover-eyebrow {
+    font-size: 12px; letter-spacing: .35em; text-indent: .35em;
+    color: var(--indigo-deep); text-transform: uppercase; margin-bottom: 10px;
+  }
+  .cover-title {
+    font-family: var(--serif); font-weight: 700;
+    font-size: 34px; line-height: 1.35; color: var(--ink);
+    text-wrap: balance;
+  }
+  .cover-date {
+    margin-top: 12px; font-family: var(--serif);
+    font-size: 15px; color: var(--ink-soft); letter-spacing: .08em;
+  }
+
+  /* ---------- 공통 섹션 ---------- */
+  section { padding: 56px 28px; }
+  .sec-label {
+    font-size: 11px; letter-spacing: .3em; text-indent: .3em;
+    color: var(--label); text-align: center; margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .orn { display: flex; justify-content: center; margin-bottom: 18px; }
+  .orn svg { display: block; }
+
+  /* ---------- 초대글 ---------- */
+  .invite-copy {
+    font-family: var(--serif); text-align: center;
+    font-size: 16.5px; line-height: 2.15; color: var(--ink);
+  }
+  .invite-copy p + p { margin-top: 26px; }
+
+  /* ---------- 가족 ---------- */
+  .family { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .family-name {
+    font-family: var(--serif); font-weight: 700; font-size: 26px;
+    text-align: center; letter-spacing: .14em; text-indent: .14em;
+  }
+  .family-birth { text-align: center; color: var(--ink-soft); font-size: 14px; margin-top: 8px; }
+  .parents {
+    display: flex; justify-content: center; gap: 36px; margin-top: 26px;
+  }
+  .parent { text-align: center; }
+  .parent .role { font-size: 12px; color: var(--label); letter-spacing: .2em; text-indent: .2em; }
+  .parent .pname { font-family: var(--serif); font-size: 18px; margin-top: 4px; }
+
+  /* ---------- 성장 갤러리 ---------- */
+  .months { padding-left: 0; padding-right: 0; }
+  .months .sec-label, .months .months-title { padding: 0 28px; }
+  .months-title {
+    font-family: var(--serif); font-weight: 700; font-size: 22px;
+    text-align: center; margin-bottom: 26px; text-wrap: balance;
+  }
+  .rail-wrap { position: relative; }
+  .rail {
+    display: flex; gap: 14px; overflow-x: auto; padding: 4px 28px 12px;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .rail::-webkit-scrollbar { display: none; }
+  .rail.dragging { scroll-snap-type: none; cursor: grabbing; user-select: none; }
+  .rail-btn {
+    display: none; position: absolute; top: 50%; transform: translateY(-70%);
+    width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line);
+    background: rgba(255,253,248,.95); color: var(--ink-soft);
+    cursor: pointer; z-index: 2; align-items: center; justify-content: center;
+    box-shadow: 0 2px 8px rgba(74,66,56,.14);
+  }
+  .rail-btn:hover { color: var(--indigo-deep); border-color: var(--indigo); }
+  .rail-btn:focus-visible { outline: 2px solid var(--indigo-deep); outline-offset: 2px; }
+  .rail-btn svg { display: block; }
+  .rail-btn.prev { left: 10px; }
+  .rail-btn.next { right: 10px; }
+  /* 마우스 환경에서만 화살표 노출·드래그 커서 */
+  @media (hover: hover) and (pointer: fine) {
+    .rail-btn { display: flex; }
+    .rail { cursor: grab; }
+    .rail-hint { display: none; }
+  }
+  .mcard { flex: 0 0 208px; scroll-snap-align: center; }
+  .mcard .ph {
+    width: 208px; height: 268px; overflow: hidden; border-radius: 4px;
+    background: var(--line);
+    box-shadow: 0 2px 10px rgba(74,66,56,.10);
+  }
+  .mcard img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .mcard figcaption {
+    text-align: center; margin-top: 10px;
+    font-family: var(--serif); font-size: 13px; color: var(--ink-soft);
+    letter-spacing: .12em; text-indent: .12em;
+  }
+  .rail-hint { text-align: center; font-size: 12px; color: var(--label); margin-top: 14px; }
+
+  /* ---------- 스튜디오 컷 ---------- */
+  .studio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .studio-grid figure.wide { grid-column: 1 / -1; }
+  .studio-grid .ph { border-radius: 4px; overflow: hidden; box-shadow: 0 2px 10px rgba(74,66,56,.10); }
+  .studio-grid img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .studio-grid figure:not(.wide) .ph { aspect-ratio: 4 / 5; }
+  @media (min-width: 720px) {
+    .studio-grid { grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  }
+
+  /* ---------- 라이트박스 (폴라로이드) ---------- */
+  .ph img { cursor: zoom-in; }
+  .lb {
+    position: fixed; inset: 0; z-index: 50;
+    background: rgba(43, 37, 29, .92);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity .25s ease;
+  }
+  .lb.open { opacity: 1; pointer-events: auto; }
+  .polaroid {
+    background: #FFFDF8; padding: 14px 14px 0; border-radius: 3px;
+    box-shadow: 0 24px 70px rgba(0,0,0,.45);
+    max-width: min(86vw, 460px);
+    transform: scale(.92) rotate(-1.2deg); transition: transform .28s cubic-bezier(.2,.9,.3,1.2);
+    touch-action: pan-y;
+  }
+  .lb.open .polaroid { transform: scale(1) rotate(var(--tilt, -1.2deg)); }
+  .polaroid img {
+    display: block; width: 100%; max-height: 62vh; object-fit: contain;
+    background: #EFE9DE;
+  }
+  .polaroid figcaption {
+    font-family: var(--serif); text-align: center; color: #5C5345;
+    font-size: 15px; padding: 14px 6px 18px; letter-spacing: .08em;
+  }
+  .lb-count {
+    position: absolute; top: 18px; left: 50%; transform: translateX(-50%);
+    color: rgba(255,253,248,.75); font-size: 13px; letter-spacing: .15em;
+    font-variant-numeric: tabular-nums;
+  }
+  .lb-close {
+    position: absolute; top: 12px; right: 12px; width: 44px; height: 44px;
+    background: none; border: none; color: rgba(255,253,248,.85); cursor: pointer;
+  }
+  .lb-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 48px; height: 48px; border-radius: 50%; border: none;
+    background: rgba(255,253,248,.12); color: rgba(255,253,248,.9);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+  }
+  .lb-nav:hover { background: rgba(255,253,248,.24); }
+  .lb-nav:focus-visible, .lb-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .lb-nav.prev { left: max(10px, calc(50% - min(43vw, 230px) - 64px)); }
+  .lb-nav.next { right: max(10px, calc(50% - min(43vw, 230px) - 64px)); }
+  @media (max-width: 719px) { .lb-nav { display: none; } }
+  .lb-hint {
+    position: absolute; bottom: 20px; left: 0; right: 0; text-align: center;
+    color: rgba(255,253,248,.55); font-size: 12px; letter-spacing: .08em;
+  }
+  @media (min-width: 720px) { .lb-hint { display: none; } }
+
+  /* ---------- 일시 · 달력 ---------- */
+  .when { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .when-date {
+    text-align: center; font-family: var(--serif); font-weight: 700;
+    font-size: 21px; margin-bottom: 4px;
+  }
+  .when-time { text-align: center; color: var(--ink-soft); font-size: 15px; margin-bottom: 30px; }
+  .cal { max-width: 310px; margin: 0 auto; }
+  .cal-head {
+    text-align: center; font-family: var(--serif); font-size: 14px;
+    color: var(--ink-soft); letter-spacing: .25em; text-indent: .25em; margin-bottom: 14px;
+  }
+  .cal table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .cal th {
+    font-size: 11px; font-weight: 600; color: var(--label);
+    padding-bottom: 10px; letter-spacing: .1em;
+  }
+  .cal th.sun, .cal td.sun { color: #C98B8B; }
+  .cal td {
+    text-align: center; font-size: 13.5px; padding: 7px 0; color: var(--ink-soft);
+  }
+  .cal td.dday { position: relative; color: #fff; font-weight: 700; }
+  .cal td.dday::before {
+    content: ''; position: absolute; left: 50%; top: 50%;
+    width: 32px; height: 32px; border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--indigo); z-index: -1;
+  }
+  .cal td.dday { z-index: 0; }
+
+  /* ---------- 장소 ---------- */
+  .place-name {
+    text-align: center; font-family: var(--serif); font-weight: 700; font-size: 22px;
+  }
+  .place-addr { text-align: center; color: var(--ink); font-size: 15px; margin-top: 10px; line-height: 1.75; }
+  .addr-sub { color: var(--label); font-size: 13px; }
+  .copy-btn {
+    display: block; margin: 14px auto 0; padding: 8px 18px;
+    border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+    color: var(--ink-soft); font-size: 13px; cursor: pointer; font-family: var(--sans);
+  }
+  .copy-btn:hover { border-color: var(--indigo); color: var(--indigo-deep); }
+  .copy-btn:focus-visible { outline: 2px solid var(--indigo-deep); outline-offset: 2px; }
+  .way { margin-top: 32px; display: grid; gap: 16px; }
+  .way-item {
+    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; font-size: 14px; color: var(--ink-soft); line-height: 1.8;
+  }
+  .way-title {
+    font-family: var(--serif); font-weight: 700; font-size: 14.5px;
+    color: var(--ink); margin-bottom: 6px;
+  }
+  .map-links { display: flex; justify-content: center; gap: 12px; margin-top: 22px; }
+  .map-links a {
+    display: inline-block; padding: 12px 22px; border-radius: 999px;
+    font-size: 14px; text-decoration: none; letter-spacing: .02em;
+  }
+  .map-links a:focus-visible { outline: 2px solid var(--indigo-deep); outline-offset: 2px; }
+  .map-links .kakao { background: var(--indigo); color: #fff; }
+  .map-links .naver { background: transparent; color: var(--indigo-deep); border: 1px solid var(--indigo); }
+
+  /* ---------- 맺음 ---------- */
+  .outro { text-align: center; padding-bottom: 72px; }
+  .outro-copy { font-family: var(--serif); font-size: 16px; line-height: 2.1; }
+  .outro-sign { margin-top: 24px; color: var(--ink-soft); font-size: 13.5px; letter-spacing: .08em; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    section { animation: rise .7s ease both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+
+<div class="frame">
+
+  <header class="cover">
+    <img src="img/cover.jpg" alt="한복을 입고 달항아리에 기대어 있는 강현이" width="1120" height="1400">
+    <div class="cover-text">
+      <p class="cover-eyebrow">First Birthday</p>
+      <h1 class="cover-title">강현이의<br>첫 번째 생일</h1>
+      <p class="cover-date">2026. 12. 5. 토요일 오후 5시 · 2부</p>
+    </div>
+  </header>
+
+  <section>
+    <p class="sec-label">Invitation</p>
+    <div class="orn" aria-hidden="true">
+      <svg width="46" height="14" viewBox="0 0 46 14" fill="none">
+        <circle cx="23" cy="7" r="3" fill="#E8B4A0"/>
+        <line x1="0" y1="7" x2="14" y2="7" stroke="#E9E0D2" stroke-width="1"/>
+        <line x1="32" y1="7" x2="46" y2="7" stroke="#E9E0D2" stroke-width="1"/>
+      </svg>
+    </div>
+    <div class="invite-copy">
+      <p>지난겨울, 선물처럼 찾아와<br>저희 품에 안긴 강현이가<br>어느덧 첫 생일을 맞이합니다.</p>
+      <p>따뜻한 사랑으로 지켜봐 주신 분들을 모시고<br>강현이의 첫돌을 축하하는<br>작은 자리를 마련했습니다.</p>
+      <p>귀한 걸음 하시어<br>강현이의 앞날을 축복해 주시면<br>더없는 기쁨으로 간직하겠습니다.</p>
+    </div>
+  </section>
+
+  <section class="family">
+    <p class="sec-label">Our Baby</p>
+    <p class="family-name">박강현</p>
+    <p class="family-birth">2025년 12월 7일에 태어났습니다</p>
+    <div class="parents">
+      <div class="parent">
+        <p class="role">아빠</p>
+        <p class="pname">박종경</p>
+      </div>
+      <div class="parent">
+        <p class="role">엄마</p>
+        <p class="pname">강민지</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="months">
+    <p class="sec-label">Twelve Months</p>
+    <h2 class="months-title">강현이의 열두 달</h2>
+    <div class="rail-wrap">
+    <button class="rail-btn prev" type="button" aria-label="이전 사진">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="rail-btn next" type="button" aria-label="다음 사진">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="rail">
+      <figure class="mcard"><div class="ph"><img src="img/m1.jpg" alt="1개월의 강현이" loading="lazy"></div><figcaption>1개월</figcaption></figure>
+      <figure class="mcard"><div class="ph"><img src="img/m2.jpg" alt="2개월의 강현이" loading="lazy"></div><figcaption>2개월</figcaption></figure>
+      <figure class="mcard"><div class="ph"><img src="img/m3.jpg" alt="3개월의 강현이" loading="lazy"></div><figcaption>3개월</figcaption></figure>
+      <figure class="mcard"><div class="ph"><img src="img/m4.jpg" alt="4개월의 강현이" loading="lazy"></div><figcaption>4개월</figcaption></figure>
+      <figure class="mcard"><div class="ph"><img src="img/m5.jpg" alt="5개월의 강현이" loading="lazy"></div><figcaption>5개월</figcaption></figure>
+      <figure class="mcard"><div class="ph"><img src="img/m6.jpg" alt="6개월의 강현이" loading="lazy"></div><figcaption>6개월</figcaption></figure>
+      <figure class="mcard"><div class="ph"><img src="img/m7.jpg" alt="7개월의 강현이" loading="lazy"></div><figcaption>7개월</figcaption></figure>
+      <figure class="mcard"><div class="ph"><img src="img/m8.jpg" alt="8개월의 강현이" loading="lazy"></div><figcaption>8개월</figcaption></figure>
+      <figure class="mcard"><div class="ph"><img src="img/m9.jpg" alt="9개월의 강현이" loading="lazy"></div><figcaption>9개월</figcaption></figure>
+      <figure class="mcard"><div class="ph"><img src="img/m10.jpg" alt="10개월의 강현이" loading="lazy"></div><figcaption>10개월</figcaption></figure>
+      <figure class="mcard"><div class="ph"><img src="img/m11.jpg" alt="11개월의 강현이" loading="lazy"></div><figcaption>11개월</figcaption></figure>
+      <figure class="mcard"><div class="ph"><img src="img/m12.jpg" alt="12개월의 강현이" loading="lazy"></div><figcaption>12개월</figcaption></figure>
+    </div>
+    </div>
+    <p class="rail-hint">옆으로 넘기며 보실 수 있어요</p>
+  </section>
+
+  <section>
+    <p class="sec-label">Studio</p>
+    <div class="studio-grid">
+      <figure><div class="ph"><img src="img/studio_hanbok.jpg" alt="한복을 입고 앉아 있는 강현이" data-cap="첫돌 한복" loading="lazy"></div></figure>
+      <figure><div class="ph"><img src="img/studio_rabbit.jpg" alt="토끼 모자를 쓴 아기 강현이" data-cap="아기 토끼 강현이" loading="lazy"></div></figure>
+      <figure><div class="ph"><img src="img/studio_bench.jpg" alt="벤치에 앉아 활짝 웃는 강현이" data-cap="벤치에서 까르르" loading="lazy"></div></figure>
+      <figure><div class="ph"><img src="img/studio_sports.jpg" alt="농구복을 입은 강현이" data-cap="꼬마 농구왕" loading="lazy"></div></figure>
+      <figure><div class="ph"><img src="img/studio_soccer.jpg" alt="축구공을 안고 웃는 강현이" data-cap="축구도 자신 있어요" loading="lazy"></div></figure>
+      <figure><div class="ph"><img src="img/studio_green.jpg" alt="초록 베레모를 쓴 강현이" data-cap="초록 베레모" loading="lazy"></div></figure>
+    </div>
+  </section>
+
+  <section class="when">
+    <p class="sec-label">When</p>
+    <p class="when-date">2026년 12월 5일 토요일</p>
+    <p class="when-time">오후 5시 · 2부</p>
+    <div class="cal">
+      <p class="cal-head">DECEMBER</p>
+      <table>
+        <thead>
+          <tr><th class="sun" scope="col">일</th><th scope="col">월</th><th scope="col">화</th><th scope="col">수</th><th scope="col">목</th><th scope="col">금</th><th scope="col">토</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sun"></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td class="dday">5</td></tr>
+          <tr><td class="sun">6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+          <tr><td class="sun">13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+          <tr><td class="sun">20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+          <tr><td class="sun">27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <p class="sec-label">Where</p>
+    <p class="place-name">벨노아</p>
+    <p class="place-addr">대전광역시 서구 계룡로394번길 9, 3층<br><span class="addr-sub">(갈마동 343-55)</span></p>
+    <button class="copy-btn" type="button">주소 복사</button>
+    <div class="map-links">
+      <a class="kakao" href="https://map.kakao.com/?q=%EB%8C%80%EC%A0%84%20%EB%B2%A8%EB%85%B8%EC%95%84" target="_blank" rel="noopener">카카오맵으로 보기</a>
+      <a class="naver" href="https://map.naver.com/p/search/%EB%8C%80%EC%A0%84%20%EB%B2%A8%EB%85%B8%EC%95%84" target="_blank" rel="noopener">네이버 지도</a>
+    </div>
+    <div class="way">
+      <div class="way-item">
+        <p class="way-title">주차 안내</p>
+        <p>갈마복합커뮤니티센터 공영주차장을 이용해 주세요.<br>270대 규모이며 주말에는 무료입니다.</p>
+      </div>
+      <div class="way-item">
+        <p class="way-title">주차장에서 오시는 길</p>
+        <p>주차 후 드롭존 출입구로 나와 센터 뒤편 동산멘션 방향으로 직진하면, 동산멘션 정문 쪽에 벨노아가 있습니다. 도보 2~3분 거리입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="outro">
+    <div class="orn" aria-hidden="true">
+      <svg width="46" height="14" viewBox="0 0 46 14" fill="none">
+        <circle cx="23" cy="7" r="3" fill="#E8B4A0"/>
+        <line x1="0" y1="7" x2="14" y2="7" stroke="#E9E0D2" stroke-width="1"/>
+        <line x1="32" y1="7" x2="46" y2="7" stroke="#E9E0D2" stroke-width="1"/>
+      </svg>
+    </div>
+    <p class="outro-copy">강현이의 첫걸음을<br>함께 축하해 주세요.</p>
+    <p class="outro-sign">박종경 · 강민지 올림</p>
+  </section>
+
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="사진 크게 보기">
+  <p class="lb-count" id="lbCount"></p>
+  <button class="lb-close" type="button" aria-label="닫기">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <button class="lb-nav prev" type="button" aria-label="이전 사진">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <button class="lb-nav next" type="button" aria-label="다음 사진">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <figure class="polaroid">
+    <img id="lbImg" src="" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <p class="lb-hint">옆으로 밀어 넘길 수 있어요</p>
+</div>
+
+<script>
+// PC 사용성: 열두 달 갤러리 화살표 이동 + 마우스 드래그 스크롤
+(function () {
+  var rail = document.querySelector('.rail');
+  if (!rail) return;
+  var step = function () {
+    var card = rail.querySelector('.mcard');
+    return card ? card.offsetWidth + 14 : 222;
+  };
+  document.querySelector('.rail-btn.prev').addEventListener('click', function () {
+    rail.scrollBy({ left: -step() * 2, behavior: 'smooth' });
+  });
+  document.querySelector('.rail-btn.next').addEventListener('click', function () {
+    rail.scrollBy({ left: step() * 2, behavior: 'smooth' });
+  });
+
+  var down = false, moved = false, startX = 0, startLeft = 0;
+  rail.addEventListener('pointerdown', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    down = true; moved = false; startX = e.clientX; startLeft = rail.scrollLeft;
+  });
+  window.addEventListener('pointermove', function (e) {
+    if (!down) return;
+    var dx = e.clientX - startX;
+    if (Math.abs(dx) > 4) { moved = true; rail.classList.add('dragging'); }
+    if (moved) rail.scrollLeft = startLeft - dx;
+  });
+  window.addEventListener('pointerup', function () {
+    down = false;
+    if (moved) requestAnimationFrame(function () { rail.classList.remove('dragging'); });
+  });
+  rail.addEventListener('dragstart', function (e) { e.preventDefault(); });
+})();
+
+// 라이트박스: 사진을 폴라로이드 프레임으로 확대, 그룹 안에서 넘겨보기
+(function () {
+  var lb = document.getElementById('lb');
+  var lbImg = document.getElementById('lbImg');
+  var lbCap = document.getElementById('lbCap');
+  var lbCount = document.getElementById('lbCount');
+  var polaroid = lb.querySelector('.polaroid');
+  var rail = document.querySelector('.rail');
+
+  var groups = { months: [], studio: [] };
+  document.querySelectorAll('.months .mcard img').forEach(function (img) {
+    var cap = img.closest('.mcard').querySelector('figcaption');
+    groups.months.push({ src: img.getAttribute('src'), cap: cap ? cap.textContent : '', alt: img.alt });
+  });
+  document.querySelectorAll('.studio-grid img').forEach(function (img) {
+    groups.studio.push({ src: img.getAttribute('src'), cap: img.getAttribute('data-cap') || '', alt: img.alt });
+  });
+
+  var cur = { group: 'months', idx: 0 };
+  function render(dir) {
+    var list = groups[cur.group];
+    var item = list[cur.idx];
+    var tilt = ((cur.idx * 37) % 50 - 25) / 10;
+    polaroid.style.setProperty('--tilt', tilt + 'deg');
+    lbImg.src = item.src; lbImg.alt = item.alt;
+    lbCap.textContent = item.cap;
+    lbCount.textContent = (cur.idx + 1) + ' / ' + list.length;
+    if (dir) {
+      polaroid.animate(
+        [{ transform: 'translateX(' + dir * 26 + 'px) rotate(' + tilt + 'deg)', opacity: .3 },
+         { transform: 'translateX(0) rotate(' + tilt + 'deg)', opacity: 1 }],
+        { duration: 220, easing: 'ease-out' });
+    }
+  }
+  function open(group, idx) {
+    cur = { group: group, idx: idx };
+    render(0);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function move(dir) {
+    var list = groups[cur.group];
+    cur.idx = (cur.idx + dir + list.length) % list.length;
+    render(dir);
+  }
+
+  document.querySelectorAll('.months .mcard img').forEach(function (img, i) {
+    img.addEventListener('click', function () {
+      if (rail && rail.classList.contains('dragging')) return;
+      open('months', i);
+    });
+  });
+  document.querySelectorAll('.studio-grid img').forEach(function (img, i) {
+    img.addEventListener('click', function () { open('studio', i); });
+  });
+
+  lb.querySelector('.lb-close').addEventListener('click', close);
+  lb.querySelector('.lb-nav.prev').addEventListener('click', function () { move(-1); });
+  lb.querySelector('.lb-nav.next').addEventListener('click', function () { move(1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') move(-1);
+    if (e.key === 'ArrowRight') move(1);
+  });
+
+  var tx = null;
+  polaroid.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+  polaroid.addEventListener('touchend', function (e) {
+    if (tx === null) return;
+    var dx = e.changedTouches[0].clientX - tx; tx = null;
+    if (dx > 44) move(-1);
+    else if (dx < -44) move(1);
+  }, { passive: true });
+})();
+
+// 주소 복사 버튼
+(function () {
+  var btn = document.querySelector('.copy-btn');
+  if (!btn) return;
+  var ADDR = '대전 서구 계룡로394번길 9 3층 벨노아';
+  btn.addEventListener('click', function () {
+    var done = function () {
+      btn.textContent = '복사되었습니다';
+      setTimeout(function () { btn.textContent = '주소 복사'; }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(ADDR).then(done);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = ADDR; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta); done();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
